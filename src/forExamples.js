@@ -1,4 +1,4 @@
-const myCars = [
+const cars = [
   {
     make: "Hyundai",
     model: "Veloster",
@@ -25,8 +25,9 @@ function logFasterCar(forType, fasterCar) {
 
 function doStandardFor(cars) {
   let fasterCar = cars[0];
+  const quantityOfCars = cars.length;
 
-  for (let index = 0; index < cars.length; index++) {
+  for (let index = 0; index < quantityOfCars; index++) {
     if (cars[index].topSpeed > fasterCar.topSpeed) {
       fasterCar = cars[index];
     }
@@ -62,7 +63,7 @@ function doForOf(cars) {
 function doForIn(cars) {
   let fasterCar = cars[0];
 
-  for (let index in cars) {
+  for (const index in cars) {
     if (cars[index].topSpeed > fasterCar.topSpeed) {
       fasterCar = cars[index];
     }
@@ -71,7 +72,7 @@ function doForIn(cars) {
   logFasterCar('[FOR...IN]', fasterCar);
 }
 
-// doStandardFor(myCars);
-// doForEach(myCars);
-// doForOf(myCars);
-// doForIn(myCars);
+doStandardFor(cars);
+doForEach(cars);
+doForOf(cars);
+doForIn(cars);
